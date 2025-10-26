@@ -11,12 +11,21 @@ license.workspace = true
 edition = "2024"
 rust-version = "1.85"
 
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+
+
 [lints]
 workspace = true
 
 [dependencies]
 libsignal-core = { workspace = true }
 signal-crypto = { workspace = true }
+
+
+getrandom = { version = "0.2.1", features = ["js"] }
+getrandom03 = { package = "getrandom", version = "0.3", features = ["wasm_js"] }
 
 aes = { workspace = true, features = ["zeroize"] }
 aes-gcm-siv = { workspace = true }
@@ -46,6 +55,10 @@ subtle = { workspace = true }
 thiserror = { workspace = true }
 uuid = { workspace = true }
 zerocopy = { workspace = true, features = ["derive"] }
+wasm-bindgen = "0.2.104"
+js-sys = "0.3.81"
+wasm-bindgen-futures = "0.4.54"
+maybe-async = "0.2.10"
 
 [features]
 kyber768 = ["libcrux-ml-kem/kyber", "libcrux-ml-kem/mlkem768"]

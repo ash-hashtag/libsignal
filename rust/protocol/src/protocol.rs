@@ -3,6 +3,9 @@
 // SPDX-License-Identifier: AGPL-3.0-only
 //
 
+use wasm_bindgen::prelude::*;
+
+
 use hmac::{Hmac, Mac};
 use prost::Message;
 use rand::{CryptoRng, Rng};
@@ -28,6 +31,7 @@ pub enum CiphertextMessage {
     PlaintextContent(PlaintextContent),
 }
 
+#[wasm_bindgen]
 #[derive(Copy, Clone, Eq, PartialEq, Debug, derive_more::TryFrom)]
 #[repr(u8)]
 #[try_from(repr)]

@@ -40,6 +40,9 @@ mod session_cipher;
 mod state;
 mod storage;
 mod timestamp;
+pub mod export;
+
+
 
 use error::Result;
 pub use error::SignalProtocolError;
@@ -87,3 +90,12 @@ pub use storage::{
     SessionStore, SignedPreKeyStore,
 };
 pub use timestamp::Timestamp;
+
+
+use wasm_bindgen::prelude::*;
+
+#[wasm_bindgen(start)]
+pub fn start() {
+    // initialization code
+}
+

@@ -21,6 +21,7 @@ use crate::{IdentityKey, IdentityKeyPair, ProtocolAddress, PublicKey};
 ///
 /// [IdentityKeyStore::is_trusted_identity] uses this to ensure the identity provided is configured
 /// for the appropriate role.
+#[wasm_bindgen::prelude::wasm_bindgen]
 #[derive(Debug, Clone, Eq, PartialEq)]
 pub enum Direction {
     /// We are in the context of sending a message.
@@ -30,6 +31,8 @@ pub enum Direction {
 }
 
 /// The result of saving a new identity key for a protocol address.
+
+#[wasm_bindgen::prelude::wasm_bindgen]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, derive_more::TryFrom)]
 #[repr(C)]
 #[try_from(repr)]
